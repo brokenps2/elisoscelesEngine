@@ -1,6 +1,7 @@
 package init;
 
 import audio.AudioManager;
+import lwjgui.LWJGUI;
 import org.lwjgl.opengl.GL;
 import org.lwjgl.opengl.GL11;
 import org.lwjglx.Sys;
@@ -38,10 +39,9 @@ public class Main {
 
             while(true) {
                 DisplayManager.update();
-                if(!DisplayManager.running) break;
-
                 SceneManager.updateScene();
-
+                LWJGUI.render();
+                if(!DisplayManager.running) break;
             }
 
             AudioManager.disposeAudio();
