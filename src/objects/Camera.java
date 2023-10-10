@@ -114,25 +114,26 @@ public class Camera {
 
     public void calculateMouse() {
 
-        newMouseX = Mouse.getMouseX();
-        newMouseY = Mouse.getMouseY();
-
-        if(pitch > 90) pitch = 90;
-        if(pitch < -90) pitch = -90;
-
         if(GLFW.glfwGetMouseButton(DisplayManager.win, GLFW.GLFW_MOUSE_BUTTON_LEFT) == 1) {
             GLFW.glfwSetInputMode(DisplayManager.win, GLFW.GLFW_CURSOR, GLFW.GLFW_CURSOR_DISABLED);
         }
 
-        float dx = (float) (newMouseX - oldMouseX);
-        float dy = (float) (newMouseY - oldMouseY);
+        if(DisplayManager.mouseLocked()) {
+            newMouseX = Mouse.getMouseX();
+            newMouseY = Mouse.getMouseY();
 
-        yaw += dx * 0.2f;
-        pitch += dy * 0.2f;
+            if(pitch > 90) pitch = 90;
+            if(pitch < -90) pitch = -90;
 
-        oldMouseX = newMouseX;
-        oldMouseY = newMouseY;
+            float dx = (float) (newMouseX - oldMouseX);
+            float dy = (float) (newMouseY - oldMouseY);
 
+            yaw += dx * 0.2f;
+            pitch += dy * 0.2f;
+
+            oldMouseX = newMouseX;
+            oldMouseY = newMouseY;
+        }
     }
 
     public void setPosition(float x, float y, float z) {

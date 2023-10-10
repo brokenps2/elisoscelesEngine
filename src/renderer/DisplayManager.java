@@ -62,7 +62,7 @@ public class DisplayManager {
 
         if(Keyboard.isKeyDown(GLFW_KEY_LEFT_ALT)) running = false;
         //re enable cursor
-        if(Keyboard.isKeyPressed(GLFW_KEY_X)) GLFW.glfwSetInputMode(win, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
+        if(Keyboard.isKeyPressed(GLFW_KEY_ESCAPE)) GLFW.glfwSetInputMode(win, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
         if(glfwWindowShouldClose(win)) running = false;
 
 
@@ -74,6 +74,10 @@ public class DisplayManager {
 
     private static long getTime() {
         return glfwGetTimerValue() * 1000 / glfwGetTimerFrequency();
+    }
+
+    public static boolean mouseLocked() {
+        return glfwGetInputMode(win, GLFW_CURSOR) == GLFW_CURSOR_DISABLED;
     }
 
     public static void close() {
