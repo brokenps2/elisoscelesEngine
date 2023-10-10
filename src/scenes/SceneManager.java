@@ -37,46 +37,31 @@ public class SceneManager {
     static Scripting scripting = new Scripting();
     static boolean disposable = false;
 
+    static Scene currentScene;
+
     static List<Object> objects = new ArrayList<Object>();
 
-    public static void loadScene(String customScenePath) {
+    public static void loadScene(Scene scene) {
+        if(scene.loading) {
 
-        dispose();
+            currentScene = scene;
+            currentScene.start();
 
-        scenePath = customScenePath;
-
-        loader = new Loader();
-        ModelData data = OBJLoader.loadOBJ(scenePath + "default.obj");
-        RawModel model = loader.loadToVAO(data.getVertices(), data.getTextureCoords(), data.getNormals(), data.getIndices());
-        ModelTexture texture = new ModelTexture(loader.loadTexture(scenePath + "default.png"));
-        TexturedModel mapModel = new TexturedModel(model, texture);
-        map = new Object(mapModel, new Vector3f(0,0,0),0,0, 0, 2f);
-
-        camera = new Camera();
-        player = new Player();
-        player.setPosition(0,0,0);
-        light = new Light(new Vector3f(2000,2000,2000), new Vector3f(1,1,1));
-
-        scripting.exec(scenePath + "scripts/start.js");
-
-        objects.add(map);
-
-        disposable = true;
-
+        }
     }
 
     public static void updateScene() {
 
-        renderer.processObject(map);
+
+        currentScene.update();
 
         for (Object object : objects) {
             renderer.processObject(object);
         }
 
-        renderer.render(light, camera);
-        player.movePlayer(camera);
+        renderer.render(currentScene.light, currentScene.camera);
 
-        scripting.exec(scenePath + "scripts/update.js");
+        currentScene.player.movePlayer(currentScene.camera);
 
     }
 
@@ -111,7 +96,7 @@ public class SceneManager {
 
     public static void dispose() {
 
-        if(disposable) scripting.exec("res/scenes/test/scripts/dispose.js"); disposable = false;
+        currentScene.dispose();
 
         Sound.stopAll();
 

@@ -12,9 +12,9 @@ import textures.ModelTexture;
 
 public class ObjectGetter {
 
-    Loader loader = new Loader();
+    static Loader loader = new Loader();
 
-    public Object getModel(String modelPath, String texturePath) {
+    public static Object getModel(String modelPath, String texturePath) {
         ModelData modelData = OBJLoader.loadOBJ(modelPath);
         RawModel rawModel = loader.loadToVAO(modelData.getVertices(), modelData.getTextureCoords(), modelData.getNormals(), modelData.getIndices());
         ModelTexture modelTexture = new ModelTexture(loader.loadTexture(texturePath));
@@ -23,7 +23,7 @@ public class ObjectGetter {
         return new Object(texturedModel, new Vector3f(0,0,0), 0, 0, 0, 1);
     }
 
-    public Object getModel(String modelPath, String texturePath, float x, float y, float z, float scale) {
+    public static Object getModel(String modelPath, String texturePath, float x, float y, float z, float scale) {
         ModelData modelData = OBJLoader.loadOBJ(modelPath);
         RawModel rawModel = loader.loadToVAO(modelData.getVertices(), modelData.getTextureCoords(), modelData.getNormals(), modelData.getIndices());
         ModelTexture modelTexture = new ModelTexture(loader.loadTexture(texturePath));
@@ -33,7 +33,7 @@ public class ObjectGetter {
         return new Object(texturedModel, position, 0, 0, 0, scale);
     }
 
-    public Object getModel(String modelPath, String texturePath, float scale) {
+    public static Object getModel(String modelPath, String texturePath, float scale) {
         ModelData modelData = OBJLoader.loadOBJ(modelPath);
         RawModel rawModel = loader.loadToVAO(modelData.getVertices(), modelData.getTextureCoords(), modelData.getNormals(), modelData.getIndices());
         ModelTexture modelTexture = new ModelTexture(loader.loadTexture(texturePath));
@@ -42,7 +42,7 @@ public class ObjectGetter {
         return new Object(texturedModel, new Vector3f(0,0,0), 0, 0, 0, scale);
     }
 
-    public Object getModel(String modelPath, String texturePath, float x, float y, float z, char colliderType) {
+    public static Object getModel(String modelPath, String texturePath, float x, float y, float z, char colliderType) {
         ModelData modelData = OBJLoader.loadOBJ(modelPath);
         RawModel rawModel = loader.loadToVAO(modelData.getVertices(), modelData.getTextureCoords(), modelData.getNormals(), modelData.getIndices());
         ModelTexture modelTexture = new ModelTexture(loader.loadTexture(texturePath));
@@ -52,7 +52,7 @@ public class ObjectGetter {
         return new Object(texturedModel, position, 0, 0, 0, 1);
     }
 
-    public Object getModel(String modelPath, String texturePath, float x, float y, float z, float scale, char colliderType) {
+    public static Object getModel(String modelPath, String texturePath, float x, float y, float z, float scale, char colliderType) {
         ModelData modelData = OBJLoader.loadOBJ(modelPath);
         RawModel rawModel = loader.loadToVAO(modelData.getVertices(), modelData.getTextureCoords(), modelData.getNormals(), modelData.getIndices());
         ModelTexture modelTexture = new ModelTexture(loader.loadTexture(texturePath));

@@ -6,6 +6,7 @@ import org.lwjgl.opengl.GL11;
 import org.lwjglx.Sys;
 import renderer.DisplayManager;
 import scenes.SceneManager;
+import scenes.TestScene;
 
 public class Main {
 
@@ -33,7 +34,7 @@ public class Main {
             System.out.println();
             System.out.println();
 
-            SceneManager.loadScene("res/scenes/test/");
+            SceneManager.loadScene(new TestScene());
 
             while(true) {
                 DisplayManager.update();
