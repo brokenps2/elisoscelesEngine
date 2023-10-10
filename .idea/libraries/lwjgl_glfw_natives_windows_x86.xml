@@ -1,0 +1,70 @@
+<component name="libraryTable">
+  <library name="lwjgl-glfw-natives-windows-x86">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/lwjgl-glfw-natives-windows-x86.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/lwjgl-freetype-natives-windows.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/lwjgl-freetype-natives-windows-x86.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/lwjgl-glfw.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/lwjgl-assimp-natives-windows-x86.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/lwjgl-assimp-natives-windows.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/lwjgl-freetype.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/joml-1.10.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/lwjgl-assimp.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/lwjgl-glfw-natives-windows.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/lwjgl-ktx-natives-windows-x86.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/lwjgl-ktx-natives-windows.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/lwjgl-ktx.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/lwjgl-natives-windows-x86.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/lwjgl-natives-windows.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/lwjgl-openal-natives-windows-x86.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/lwjgl-openal-natives-windows.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/lwjgl-openal.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/lwjgl-opengl-natives-windows-x86.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/lwjgl-opengl-natives-windows.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/lwjgl-opengl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/lwjgl-stb-natives-windows-x86.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/lwjgl-stb-natives-windows.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/lwjgl-stb.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/lwjgl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/steamworks4j-1.9.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/steamworks4j-server-1.9.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/lwjgl-nuklear-natives-windows-x86.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/lwjgl-nuklear-natives-windows.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/lwjgl-nuklear.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/natives-windows.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/disruptor.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/ibxm.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jogg-0.0.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jorbis-0.0.15.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/slick-util3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/imgui-lwjgl3-1.86.10.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/imgui-binding-1.86.10.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jbullet.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/vecmath-1.5.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/LWJGUI-pre-mt.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/core-0.3.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <NATIVE>
+      <root url="file://$PROJECT_DIR$/lib" />
+      <root url="file://$PROJECT_DIR$/lib" />
+    </NATIVE>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/lib/lwjgl-glfw-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/lwjgl-assimp-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/lwjgl-freetype-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/joml-1.10.5-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/joml-1.10.5-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/lwjgl-ktx-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/lwjgl-openal-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/lwjgl-opengl-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/lwjgl-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/lwjgl-stb-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/steamworks4j-1.9.0-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/steamworks4j-server-1.9.0-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/lwjgl-nuklear-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/imgui-lwjgl3-1.86.10-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/imgui-binding-1.86.10-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
