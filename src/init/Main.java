@@ -19,7 +19,7 @@ public class Main {
     public static void main(String[] args) {
 
         if(args.length != 3) {
-            System.out.println("Usage: java -jar [jarfile] [width] [height] [fullscreen (true/false)]");
+            System.out.println("Usage: java -jar [jarfile] [width] [height] [fullscreen true|false]");
             System.exit(0);
         }
 

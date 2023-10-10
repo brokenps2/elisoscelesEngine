@@ -10,15 +10,13 @@ public class DisplayManager {
 
     public static long win;
     public static boolean running = true;
-    public int WIDTH;
-    public int HEIGHT;
 
     public static long lastFrameTime;
     public static float delta;
 
     public static void create(int width, int height, boolean fullscreen) {
 
-        System.out.println("LWJGL v" + Version.getVersion());
+        System.out.println("LWJGL " + Version.getVersion());
 
         glfwInit();
 

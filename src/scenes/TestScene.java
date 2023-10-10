@@ -30,10 +30,4 @@ public class TestScene extends Scene{
     public void dispose() {
 
     }
-
-    @Override
-    public boolean isLoading() {
-        return loading;
-    }
-
 }
