@@ -41,13 +41,15 @@
       <root url="jar://$PROJECT_DIR$/lib/imgui-binding-1.86.10.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/jbullet.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/vecmath-1.5.1.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/LWJGUI-pre-mt.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/core-0.3.0.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/lwjgl-nanovg.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/lwjgl-tinyfd.jar!/" />
       <root url="file://$PROJECT_DIR$" />
       <root url="jar://$PROJECT_DIR$/lib/lwjgl-tinyfd-natives-windows.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/lwjgl-nanovg-natives-windows.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/lwjgl-nanovg-natives-windows-x86.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/lwjgl-tinyfd-natives-windows-x86.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/lwjgui-911a641.jar!/" />
     </CLASSES>
     <JAVADOC />
     <NATIVE>

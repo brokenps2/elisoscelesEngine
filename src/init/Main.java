@@ -40,7 +40,6 @@ public class Main {
             while(true) {
                 DisplayManager.update();
                 SceneManager.updateScene();
-                LWJGUI.render();
                 if(!DisplayManager.running) break;
             }
 

@@ -1,14 +1,14 @@
 package scenes;
 
 import lwjgui.LWJGUI;
-import lwjgui.LWJGUIApplication;
+import lwjgui.scene.Context;
+import lwjgui.scene.Node;
 import lwjgui.scene.Window;
+import lwjgui.scene.WindowManager;
 import lwjgui.scene.control.Label;
 import lwjgui.scene.layout.StackPane;
 import objects.*;
-import objects.Object;
-import org.lwjgl.nanovg.NanoVG;
-import org.lwjgl.nanovg.NanoVGGL2;
+import org.lwjgl.nuklear.NkContext;
 import org.lwjglx.util.vector.Vector3f;
 import renderer.DisplayManager;
 
@@ -24,10 +24,11 @@ public class TestScene extends Scene{
         player = new Player();
         camera = new Camera();
 
-        window = LWJGUI.initialize();
+        window = WindowManager.generateWindow(DisplayManager.win);
+
         StackPane pane = new StackPane();
-        window.getScene().setRoot(pane);
-        pane.getChildren().add(new Label("yahoo"));
+        pane.getChildren().add(new Label("Hello World!"));
+        window.setScene(new lwjgui.scene.Scene(pane, 640, 480));
         window.show();
 
         SceneManager.addObject(map);
@@ -39,6 +40,8 @@ public class TestScene extends Scene{
 
     @Override
     public void update() {
+
+        window.render();
 
     }
 
