@@ -54,13 +54,13 @@ public class SceneManager {
 
         if(currentScene.loading) return;
 
-        for (Object object : objects) {
-            renderer.processObject(object);
+        if(currentScene.renderable) {
+            for (Object object : objects) {
+                renderer.processObject(object);
+            }
+            renderer.render(currentScene.light, currentScene.camera);
+            currentScene.player.movePlayer(currentScene.camera);
         }
-
-        renderer.render(currentScene.light, currentScene.camera);
-
-        currentScene.player.movePlayer(currentScene.camera);
 
         currentScene.update();
 

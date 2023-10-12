@@ -12,6 +12,7 @@ public abstract class Scene {
     public Player player;
     public Camera camera;
     public boolean loading = true;
+    public boolean renderable = true;
     public abstract void start();
     public abstract void update();
     public abstract void dispose();

@@ -1,13 +1,10 @@
 package init;
 
 import audio.AudioManager;
-import lwjgui.LWJGUI;
 import org.lwjgl.opengl.GL;
-import org.lwjgl.opengl.GL11;
-import org.lwjglx.Sys;
 import renderer.DisplayManager;
 import scenes.SceneManager;
-import scenes.TestScene;
+import scenes.TitleScreen;
 
 public class Main {
 
@@ -35,7 +32,7 @@ public class Main {
             System.out.println();
             System.out.println();
 
-            SceneManager.loadScene(new TestScene());
+            SceneManager.loadScene(new TitleScreen());
 
             while(true) {
                 DisplayManager.update();

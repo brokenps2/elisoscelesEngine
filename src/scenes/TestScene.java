@@ -112,7 +112,6 @@ public class TestScene extends Scene{
     public void update() {
         window.render();
         WindowManager.update();
-
     }
 
     @Override
