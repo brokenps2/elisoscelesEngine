@@ -2,6 +2,7 @@ package scenes;
 
 import audio.Sound;
 import init.Main;
+import lwjgui.scene.Window;
 import models.RawModel;
 import models.TexturedModel;
 import obj.ModelData;
@@ -9,6 +10,7 @@ import obj.OBJLoader;
 import objects.*;
 import objects.Object;
 import org.lwjglx.util.vector.Vector3f;
+import renderer.DisplayManager;
 import renderer.Loader;
 import renderer.MasterRenderer;
 import textures.ModelTexture;
@@ -93,6 +95,12 @@ public class SceneManager {
 
     public static float getPlayerPitch() {
         return camera.pitch;
+    }
+
+    public static Window getSceneWindow() {
+        if(currentScene.window != null)
+            return currentScene.window;
+        return null;
     }
 
     public static void dispose() {

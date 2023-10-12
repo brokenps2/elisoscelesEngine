@@ -1,5 +1,6 @@
 package scenes;
 
+import lwjgui.scene.Window;
 import objects.Camera;
 import objects.Light;
 import objects.Object;
@@ -13,6 +14,7 @@ public abstract class Scene {
     public Camera camera;
     public boolean loading = true;
     public boolean renderable = true;
+    public Window window;
     public abstract void start();
     public abstract void update();
     public abstract void dispose();
