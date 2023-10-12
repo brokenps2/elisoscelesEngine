@@ -114,10 +114,6 @@ public class Camera {
 
     public void calculateMouse() {
 
-        if(GLFW.glfwGetMouseButton(DisplayManager.win, GLFW.GLFW_MOUSE_BUTTON_LEFT) == 1) {
-            GLFW.glfwSetInputMode(DisplayManager.win, GLFW.GLFW_CURSOR, GLFW.GLFW_CURSOR_DISABLED);
-        }
-
         if(DisplayManager.mouseLocked()) {
             newMouseX = Mouse.getMouseX();
             newMouseY = Mouse.getMouseY();
