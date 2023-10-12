@@ -3,6 +3,7 @@ package scenes;
 import audio.AudioManager;
 import audio.Sound;
 import init.Main;
+import input.Keyboard;
 import lwjgui.LWJGUI;
 import lwjgui.LWJGUIApplication;
 import lwjgui.font.Font;
@@ -25,6 +26,7 @@ import objects.Object;
 import org.lwjgl.glfw.GLFW;
 import org.lwjgl.nanovg.NanoVG;
 import org.lwjgl.nanovg.NanoVGGL2;
+import org.lwjglx.Sys;
 import org.lwjglx.util.vector.Vector3f;
 import renderer.DisplayManager;
 import ui.ObjectInterface;
@@ -34,6 +36,8 @@ public class TestScene extends Scene{
 
     TestSceneSidebar sidebar = new TestSceneSidebar();
     ObjectInterface objectInterface = new ObjectInterface();
+
+    boolean inputMenu = false;
 
 
     @Override
@@ -54,14 +58,18 @@ public class TestScene extends Scene{
     }
 
     public void createUI() {
-        //sidebar.create();
         objectInterface.create();
+        sidebar.create();
     }
 
     @Override
     public void update() {
         WindowManager.update();
+
+        if(Keyboard.isKeyPressed(GLFW.GLFW_KEY_I)) objectInterface.active = true;
+        if(Keyboard.isKeyPressed(GLFW.GLFW_KEY_I) && objectInterface.active) objectInterface.active = false;
         objectInterface.update();
+        sidebar.update();
     }
 
     @Override

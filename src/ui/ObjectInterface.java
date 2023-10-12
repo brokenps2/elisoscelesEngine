@@ -11,6 +11,7 @@ import lwjgui.scene.control.Label;
 import lwjgui.scene.control.TextField;
 import lwjgui.scene.layout.BorderPane;
 import lwjgui.scene.layout.VBox;
+import objects.ObjectGetter;
 import renderer.DisplayManager;
 import scenes.SceneManager;
 import scenes.TestScene;
@@ -18,6 +19,7 @@ import scenes.TestScene;
 public class ObjectInterface extends UIObject{
 
     Window window;
+    public boolean active = false;
 
     @Override
     public void create() {
@@ -34,14 +36,21 @@ public class ObjectInterface extends UIObject{
         Button addButton = new Button("add object");
 
         TextField objPath = new TextField();
+        objPath.setPrompt(".obj path");
         TextField texPath = new TextField();
+        texPath.setPrompt("texure path");
         TextField x = new TextField();
+        x.setPrompt("x");
         x.setMaxSize(50, 50);
         TextField y = new TextField();
+        y.setPrompt("y");
         y.setMaxSize(50, 50);
         TextField z = new TextField();
+        z.setPrompt("z");
         z.setMaxSize(50, 50);
         TextField scale = new TextField();
+        scale.setPrompt("scale");
+        scale.setMaxSize(50, 50);
 
         {
             VBox menuBox = new VBox();
@@ -62,6 +71,10 @@ public class ObjectInterface extends UIObject{
             root.setCenter(menuBox);
         }
 
+        addButton.setOnAction((event) -> {
+            SceneManager.addObject(ObjectGetter.getModel(objPath.getText(), texPath.getText(), Float.parseFloat(x.getText()), Float.parseFloat(y.getText()), Float.parseFloat(z.getText()), Float.parseFloat(scale.getText())));
+        });
+
         window = WindowManager.generateWindow(DisplayManager.win);
         /* this line will error if you aren't using
         this specific version of nanovg for some reason */
@@ -74,6 +87,6 @@ public class ObjectInterface extends UIObject{
 
     @Override
     public void update() {
-        window.render();
+        if(active) window.render();
     }
 }

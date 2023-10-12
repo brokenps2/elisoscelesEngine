@@ -6,7 +6,6 @@ import com.bulletphysics.linearmath.MotionState;
 import com.bulletphysics.linearmath.Transform;
 import models.TexturedModel;
 import org.lwjglx.util.vector.Vector3f;
-import org.ode4j.ode.*;
 
 public class Object {
 
