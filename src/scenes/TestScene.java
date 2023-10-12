@@ -102,6 +102,8 @@ public class TestScene extends Scene{
         }
 
         window = WindowManager.generateWindow(DisplayManager.win);
+        /* this line will error if you aren't using
+        this specific version of nanovg for some reason */
 
         window.setScene(new lwjgui.scene.Scene(root, Main.width, Main.height));
         window.setWindowAutoClear(false);
