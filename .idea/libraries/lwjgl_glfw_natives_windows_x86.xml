@@ -47,9 +47,7 @@
       <root url="file://$PROJECT_DIR$" />
       <root url="jar://$PROJECT_DIR$/lib/lwjgl-tinyfd-natives-windows.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/lwjgl-nanovg-natives-windows.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/lwjgl-nanovg-natives-windows-x86.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/lwjgl-tinyfd-natives-windows-x86.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/lwjgui-911a641.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/LWJGUI-bdc1097.jar!/" />
     </CLASSES>
     <JAVADOC />
     <NATIVE>

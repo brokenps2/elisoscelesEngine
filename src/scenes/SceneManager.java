@@ -52,16 +52,15 @@ public class SceneManager {
 
     public static void updateScene() {
 
-
-        currentScene.update();
-
-        for (Object object : objects) {
+        if(currentScene.loading) return;for (Object object : objects) {
             renderer.processObject(object);
         }
 
         renderer.render(currentScene.light, currentScene.camera);
 
         currentScene.player.movePlayer(currentScene.camera);
+
+        currentScene.update();
 
     }
 
