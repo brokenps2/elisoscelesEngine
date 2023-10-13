@@ -1,6 +1,7 @@
 package ui;
 
 import audio.Sound;
+import com.sun.istack.internal.NotNull;
 import init.Main;
 import lwjgui.geometry.Insets;
 import lwjgui.geometry.Pos;
@@ -18,13 +19,13 @@ import renderer.DisplayManager;
 import scenes.Scene;
 import scenes.SceneManager;
 
-public class TestSceneSidebar extends UIObject{
+public class TestSceneSidebar {
 
-    Window window;
     Button resetb = new Button("reset scene");
     public VBox menuBox = new VBox();
+    Window window;
+    Button objMenu = new Button("objects menu");
 
-    @Override
     public void create() {
         BorderPane root = new BorderPane();
         root.setPadding(new Insets(24));
@@ -38,9 +39,9 @@ public class TestSceneSidebar extends UIObject{
         Label musicLabel = new Label("music");
         musicLabel.setTextFill(Color.AQUA);
         Label otherLabel = new Label("other");
-        Button ebs = new Button("earthbound shop");
-        Button ebg = new Button("earthbound guardian");
-        Button ebn = new Button("earthbound night");
+        Button ebs = new Button("track 1");
+        Button ebg = new Button("track 2");
+        Button ebn = new Button("track 3");
         Button lockb = new Button("lock mouse");
 
         ebs.setOnAction((event) -> {
@@ -72,6 +73,7 @@ public class TestSceneSidebar extends UIObject{
             menuBox.getChildren().add(otherLabel);
             menuBox.getChildren().add(lockb);
             menuBox.getChildren().add(resetb);
+            menuBox.getChildren().add(objMenu);
 
             root.setAlignment(Pos.TOP_LEFT);
             root.setLeft(menuBox);
@@ -81,9 +83,9 @@ public class TestSceneSidebar extends UIObject{
         /* this line will error if you aren't using
         this specific version of nanovg for some reason */
         window.setWindowAutoClear(false);
+        window.show();
 
         window.setScene(new lwjgui.scene.Scene(root, Main.width, Main.height));
-        window.show();
     }
 
     public void enableReset(Scene scene) {
@@ -92,7 +94,12 @@ public class TestSceneSidebar extends UIObject{
         });
     }
 
-    @Override
+    public void enableObjMenu(ObjectInterface objInterface) {
+        objMenu.setOnAction((event) -> {
+            objInterface.toggleMenu();
+        });
+    }
+
     public void update() {
         window.render();
     }

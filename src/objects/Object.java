@@ -13,7 +13,7 @@ public class Object {
     private Vector3f position;
     private float rotX, rotY, rotZ;
     private float scale;
-    public String name;
+    private String name;
 
     public Object(TexturedModel model, Vector3f position, float rotX, float rotY, float rotZ, float scale, String name) {
         this.model = model;
@@ -92,6 +92,10 @@ public class Object {
 
     public void setScale(float scale) {
         this.scale = scale;
+    }
+
+    public String getName() {
+        return name;
     }
 
 }

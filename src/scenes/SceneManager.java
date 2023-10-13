@@ -106,12 +106,6 @@ public class SceneManager {
         return objects;
     }
 
-    public static Window getSceneWindow() {
-        if(currentScene.window != null)
-            return currentScene.window;
-        return null;
-    }
-
     public static void dispose() {
 
         if(currentScene != null) currentScene.dispose();

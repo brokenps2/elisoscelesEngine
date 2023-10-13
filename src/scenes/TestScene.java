@@ -37,6 +37,8 @@ public class TestScene extends Scene{
     TestSceneSidebar sidebar = new TestSceneSidebar();
     ObjectInterface objectInterface = new ObjectInterface();
 
+    Window window;
+
     boolean inputMenu = false;
 
 
@@ -44,6 +46,8 @@ public class TestScene extends Scene{
     public void start() {
 
         map = ObjectGetter.getModel("res/mdl/oldScene1/default.obj" , "res/mdl/oldScene1/default.png", 0, 0, 0, 2f, new String("map"));
+        Object cube = ObjectGetter.getModel("res/mdl/brickCube.obj", "res/bitmap/wood.png", 0, 0, 0, 1f, new String("cube"));
+        SceneManager.addObject(cube);
         light = new Light(new Vector3f(2000,2000,2000), new Vector3f(1,1,1));
         player = new Player();
         camera = new Camera();
@@ -53,6 +57,7 @@ public class TestScene extends Scene{
 
         createUI();
         sidebar.enableReset(new TestScene());
+        sidebar.enableObjMenu(objectInterface);
 
         loading = false;
 
