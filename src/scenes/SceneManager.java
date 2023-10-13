@@ -9,6 +9,7 @@ import obj.ModelData;
 import obj.OBJLoader;
 import objects.*;
 import objects.Object;
+import org.lwjgl.opengl.GL11;
 import org.lwjglx.util.vector.Vector3f;
 import renderer.DisplayManager;
 import renderer.Loader;
@@ -31,7 +32,6 @@ public class SceneManager {
 
     static Loader loader;
     static MasterRenderer renderer = new MasterRenderer(Main.width, Main.height);
-    static Object map;
     static Player player;
     static Camera camera;
     static Light light;
@@ -39,11 +39,14 @@ public class SceneManager {
     static Scripting scripting = new Scripting();
     static boolean disposable = false;
 
-    static Scene currentScene;
+    public static Scene currentScene;
 
     static List<Object> objects = new ArrayList<Object>();
 
     public static void loadScene(Scene scene) {
+
+        dispose();
+
         if(scene.loading) {
 
             currentScene = scene;
@@ -58,6 +61,8 @@ public class SceneManager {
 
         if(currentScene.renderable) {
             for (Object object : objects) {
+                GL11.glTexParameteri(GL11.GL_TEXTURE_2D, GL11.GL_TEXTURE_MAG_FILTER, GL11.GL_NEAREST);
+                GL11.glTexParameteri(GL11.GL_TEXTURE_2D, GL11.GL_TEXTURE_MIN_FILTER, GL11.GL_NEAREST);
                 renderer.processObject(object);
             }
             renderer.render(currentScene.light, currentScene.camera);
@@ -97,6 +102,10 @@ public class SceneManager {
         return camera.pitch;
     }
 
+    public static List<Object> getObjectsArray() {
+        return objects;
+    }
+
     public static Window getSceneWindow() {
         if(currentScene.window != null)
             return currentScene.window;
@@ -105,11 +114,11 @@ public class SceneManager {
 
     public static void dispose() {
 
-        currentScene.dispose();
+        if(currentScene != null) currentScene.dispose();
+
+        objects.clear();
 
         Sound.stopAll();
-
-        removeObject(map);
 
     }
 

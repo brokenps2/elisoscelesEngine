@@ -13,14 +13,16 @@ public class Object {
     private Vector3f position;
     private float rotX, rotY, rotZ;
     private float scale;
+    public String name;
 
-    public Object(TexturedModel model, Vector3f position, float rotX, float rotY, float rotZ, float scale) {
+    public Object(TexturedModel model, Vector3f position, float rotX, float rotY, float rotZ, float scale, String name) {
         this.model = model;
         this.position = position;
         this.rotX = rotX;
         this.rotY = rotY;
         this.rotZ = rotZ;
         this.scale = scale;
+        this.name = name;
     }
 
     public void move(float dx, float dy, float dz) {

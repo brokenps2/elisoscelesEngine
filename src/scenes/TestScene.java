@@ -43,7 +43,7 @@ public class TestScene extends Scene{
     @Override
     public void start() {
 
-        map = ObjectGetter.getModel("res/mdl/oldScene1/default.obj" , "res/mdl/oldScene1/default.png", 0, 0, 0, 2f);
+        map = ObjectGetter.getModel("res/mdl/oldScene1/default.obj" , "res/mdl/oldScene1/default.png", 0, 0, 0, 2f, new String("map"));
         light = new Light(new Vector3f(2000,2000,2000), new Vector3f(1,1,1));
         player = new Player();
         camera = new Camera();
@@ -52,6 +52,7 @@ public class TestScene extends Scene{
         SceneManager.playSound("res/audio/ethnight.ogg");
 
         createUI();
+        sidebar.enableReset(new TestScene());
 
         loading = false;
 
@@ -66,8 +67,6 @@ public class TestScene extends Scene{
     public void update() {
         WindowManager.update();
 
-        if(Keyboard.isKeyPressed(GLFW.GLFW_KEY_I)) objectInterface.active = true;
-        if(Keyboard.isKeyPressed(GLFW.GLFW_KEY_I) && objectInterface.active) objectInterface.active = false;
         objectInterface.update();
         sidebar.update();
     }

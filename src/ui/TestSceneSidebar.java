@@ -9,15 +9,20 @@ import lwjgui.scene.Window;
 import lwjgui.scene.WindowManager;
 import lwjgui.scene.control.Button;
 import lwjgui.scene.control.Label;
+import lwjgui.scene.control.Toggle;
+import lwjgui.scene.control.ToggleButton;
 import lwjgui.scene.layout.BorderPane;
 import lwjgui.scene.layout.VBox;
 import org.lwjgl.glfw.GLFW;
 import renderer.DisplayManager;
+import scenes.Scene;
 import scenes.SceneManager;
 
 public class TestSceneSidebar extends UIObject{
 
     Window window;
+    Button resetb = new Button("reset scene");
+    public VBox menuBox = new VBox();
 
     @Override
     public void create() {
@@ -55,7 +60,6 @@ public class TestSceneSidebar extends UIObject{
         });
 
         {
-            VBox menuBox = new VBox();
             menuBox.setAlignment(Pos.TOP_LEFT);
             menuBox.setPadding(new Insets(4,4,4,4));
             menuBox.setBackgroundLegacy(Color.WHITE);
@@ -67,6 +71,7 @@ public class TestSceneSidebar extends UIObject{
             menuBox.getChildren().add(ebn);
             menuBox.getChildren().add(otherLabel);
             menuBox.getChildren().add(lockb);
+            menuBox.getChildren().add(resetb);
 
             root.setAlignment(Pos.TOP_LEFT);
             root.setLeft(menuBox);
@@ -79,6 +84,12 @@ public class TestSceneSidebar extends UIObject{
 
         window.setScene(new lwjgui.scene.Scene(root, Main.width, Main.height));
         window.show();
+    }
+
+    public void enableReset(Scene scene) {
+        resetb.setOnAction((event) -> {
+            SceneManager.loadScene(scene);
+        });
     }
 
     @Override
