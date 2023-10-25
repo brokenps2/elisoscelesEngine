@@ -33,4 +33,5 @@
   <p>  - physics (IN PROGRESS)</p>
   <p>  - Save files</p>
   <p>  - UI (IN PROGRESS)</p>
-  <p>  - Spatial audio</p>
+  <p>  - Better renderer</p>
+  <p>  - Third person & 2D camera)</p>
