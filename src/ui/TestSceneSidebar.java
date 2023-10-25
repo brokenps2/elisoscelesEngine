@@ -16,6 +16,7 @@ import lwjgui.scene.layout.BorderPane;
 import lwjgui.scene.layout.VBox;
 import org.lwjgl.glfw.GLFW;
 import renderer.DisplayManager;
+import scenes.RenderedScene;
 import scenes.Scene;
 import scenes.SceneManager;
 
@@ -88,7 +89,7 @@ public class TestSceneSidebar {
         window.setScene(new lwjgui.scene.Scene(root, Main.width, Main.height));
     }
 
-    public void enableReset(Scene scene) {
+    public void enableReset(RenderedScene scene) {
         resetb.setOnAction((event) -> {
             SceneManager.loadScene(scene);
         });

@@ -32,7 +32,7 @@ import renderer.DisplayManager;
 import ui.ObjectInterface;
 import ui.TestSceneSidebar;
 
-public class TestScene extends Scene{
+public class TestScene extends RenderedScene {
 
     TestSceneSidebar sidebar = new TestSceneSidebar();
     ObjectInterface objectInterface = new ObjectInterface();

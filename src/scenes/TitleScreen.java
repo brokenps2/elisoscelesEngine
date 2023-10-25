@@ -15,7 +15,7 @@ import org.lwjgl.glfw.GLFW;
 import org.lwjgl.opengl.GL11;
 import renderer.DisplayManager;
 
-public class TitleScreen extends Scene{
+public class TitleScreen extends StaticScene{
 
     Window window;
 

@@ -43,7 +43,31 @@ public class SceneManager {
 
     static List<Object> objects = new ArrayList<Object>();
 
-    public static void loadScene(Scene scene) {
+    public static void loadScene(StaticScene scene) {
+
+        dispose();
+
+        if(scene.loading) {
+
+            currentScene = scene;
+            currentScene.start();
+
+        }
+    }
+
+    public static void loadScene(RenderedScene scene) {
+
+        dispose();
+
+        if(scene.loading) {
+
+            currentScene = scene;
+            currentScene.start();
+
+        }
+    }
+
+    public static void loadScene(PhysicalScene scene) {
 
         dispose();
 
@@ -59,7 +83,7 @@ public class SceneManager {
 
         if(currentScene.loading) return;
 
-        if(currentScene.renderable) {
+        if(currentScene instanceof RenderedScene) {
             for (Object object : objects) {
                 GL11.glTexParameteri(GL11.GL_TEXTURE_2D, GL11.GL_TEXTURE_MAG_FILTER, GL11.GL_NEAREST);
                 GL11.glTexParameteri(GL11.GL_TEXTURE_2D, GL11.GL_TEXTURE_MIN_FILTER, GL11.GL_NEAREST);
@@ -67,6 +91,17 @@ public class SceneManager {
             }
             renderer.render(currentScene.light, currentScene.camera);
             currentScene.player.movePlayer(currentScene.camera);
+        }
+
+        if(currentScene instanceof PhysicalScene) {
+            for (Object object : objects) {
+                GL11.glTexParameteri(GL11.GL_TEXTURE_2D, GL11.GL_TEXTURE_MAG_FILTER, GL11.GL_NEAREST);
+                GL11.glTexParameteri(GL11.GL_TEXTURE_2D, GL11.GL_TEXTURE_MIN_FILTER, GL11.GL_NEAREST);
+                renderer.processObject(object);
+            }
+            renderer.render(currentScene.light, currentScene.camera);
+            currentScene.player.movePlayer(currentScene.camera);
+            ((PhysicalScene) currentScene).updatePhys();
         }
 
         currentScene.update();
