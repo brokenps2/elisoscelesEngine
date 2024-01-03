@@ -1,6 +1,11 @@
+<h4>no longer maintained because the code got too messy. project will eventually be rewritten in c/c++.</h4>
+
+<br>
+<br>
+
 <h1>elisoscelesEngine</h1>
   <h4>internal game engine based on <a href="https://www.lwjgl.org/">LWJGL</a></h4>
-
+  
   <hr>
 
   <img src="example.png">
